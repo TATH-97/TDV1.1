@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class SteamLobby : MonoBehaviour
 {
 
+    public static SteamLobby instance;
+
     //callbacks
     protected Callback<LobbyCreated_t> lobbyCreated;
     protected Callback<GameLobbyJoinRequested_t> JoinRequest;
@@ -19,14 +21,14 @@ public class SteamLobby : MonoBehaviour
     private CustomNetWorkManager manager;
 
     //GameObjects
-    public GameObject HostButton;
-    public GameObject StartButton;
-    public Text lobbyNameText;
 
     private void Start() {
         if(!SteamManager.Initialized) {
             Debug.Log("Steam isnt on");
             return;
+        }
+        if(instance==null) {
+            instance=this;
         }
         manager=GetComponent<CustomNetWorkManager>();
         lobbyCreated=Callback<LobbyCreated_t>.Create(onLobbyCreated);
@@ -34,8 +36,6 @@ public class SteamLobby : MonoBehaviour
         LobbyEntered=Callback<LobbyEnter_t>.Create(onLobbyEntered);
     }
     public void hostLobby() {
-        //manager=GetComponent<CustomNetWorkManager>();
-        Debug.Log("Manager "+ manager.maxConnections);
         SteamMatchmaking.CreateLobby(ELobbyType.k_ELobbyTypeFriendsOnly, manager.maxConnections);
     }
 
@@ -57,10 +57,7 @@ public class SteamLobby : MonoBehaviour
 
     private void onLobbyEntered(LobbyEnter_t callback) {
         //everyone
-        HostButton.SetActive(false);
-        StartButton.SetActive(true);
         currentLobbyID=callback.m_ulSteamIDLobby;
-        lobbyNameText.text=SteamMatchmaking.GetLobbyData(new CSteamID(callback.m_ulSteamIDLobby), "name");
 
         //Clients
         if(NetworkServer.active) {
