@@ -14,7 +14,11 @@ GameObject:
   - component: {fileID: 8238812439341876710}
   - component: {fileID: 2529134190660785235}
   - component: {fileID: -8769559320884543975}
+<<<<<<< Updated upstream
   - component: {fileID: -1925861291918604306}
+=======
+  - component: {fileID: 4677267695613780506}
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -160,7 +164,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   target: {fileID: 1805895991637248112}
-  clientAuthority: 0
+  clientAuthority: 1
   syncPosition: 1
   syncRotation: 1
   syncScale: 0
@@ -173,7 +177,11 @@ MonoBehaviour:
   compressRotation: 0
   positionPrecision: 0.01
   scalePrecision: 0.01
+<<<<<<< Updated upstream
 --- !u!114 &-1925861291918604306
+=======
+--- !u!114 &4677267695613780506
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -182,6 +190,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1471800412661391457}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< Updated upstream
   m_Script: {fileID: 11500000, guid: b3c81569048ba0d46b6afe064cd5bb85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+  m_Script: {fileID: 11500000, guid: ab2cbc52526ea384ba280d13cd1a57b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 1
+  syncMode: 0
+  syncInterval: 0.1
+  target: {fileID: 4778749222109892688}
+  clientAuthority: 1
+  syncVelocity: 1
+  clearVelocity: 0
+  velocitySensitivity: 0.1
+  syncAngularVelocity: 1
+  clearAngularVelocity: 0
+  angularVelocitySensitivity: 0.1
+>>>>>>> Stashed changes

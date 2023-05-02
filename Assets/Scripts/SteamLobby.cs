@@ -21,6 +21,12 @@ public class SteamLobby : MonoBehaviour
     private CustomNetWorkManager manager;
 
     //GameObjects
+<<<<<<< Updated upstream
+=======
+    public GameObject HostButton;
+    //public GameObject StartButton;
+    public Text lobbyNameText;
+>>>>>>> Stashed changes
 
     private void Start() {
         if(!SteamManager.Initialized) {
@@ -57,6 +63,11 @@ public class SteamLobby : MonoBehaviour
 
     private void onLobbyEntered(LobbyEnter_t callback) {
         //everyone
+<<<<<<< Updated upstream
+=======
+        HostButton.SetActive(false);
+        //StartButton.SetActive(true);
+>>>>>>> Stashed changes
         currentLobbyID=callback.m_ulSteamIDLobby;
 
         //Clients
